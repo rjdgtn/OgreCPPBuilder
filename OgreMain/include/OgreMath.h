@@ -29,6 +29,7 @@ THE SOFTWARE.
 #define __Math_H__
 
 #include "OgrePrerequisites.h"
+#include "math.h"
 
 namespace Ogre
 {
@@ -536,9 +537,9 @@ namespace Ogre
         @param plaeList List of planes which form a convex volume
         @param normalIsOutside Does the normal point outside the volume
         */
-        static std::pair<bool, Real> intersects(
-            const Ray& ray, const list<Plane>::type& planeList, 
-            bool normalIsOutside);
+        //static std::pair<bool, Real> intersects(
+        //    const Ray& ray, const list<Plane>::type& planeList, 
+        //    bool normalIsOutside);
 
         /** Sphere / plane intersection test. 
         @remarks NB just do a plane.getDistance(sphere.getCenter()) for more detail!
