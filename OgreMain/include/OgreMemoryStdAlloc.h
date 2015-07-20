@@ -31,6 +31,7 @@ THE SOFTWARE.
 
 #include <memory>
 #include <limits>
+#include <stdlib.h>
 
 #include "OgreAlignedAllocator.h"
 #include "OgreMemoryTracker.h"
