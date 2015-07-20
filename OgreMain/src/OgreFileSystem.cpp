@@ -112,8 +112,11 @@ namespace Ogre {
             directory = pattern.substr (0, pos1 + 1);
 
         String full_pattern = concatenate_path(mName, pattern);
+		char* full_pattern_buf = new char[full_pattern.size()];
+		memcpy(full_pattern_buf, full_pattern.c_str(), full_pattern.size());
+		lHandle = _findfirst(full_pattern_buf, &tagData);
+		delete[] full_pattern_buf;
 
-        lHandle = _findfirst(full_pattern.c_str(), &tagData);
         res = 0;
         while (lHandle != -1 && res != -1)
         {
@@ -162,7 +165,12 @@ namespace Ogre {
             else
                 mask.append (pattern);
 
-            lHandle = _findfirst(base_dir.c_str (), &tagData);
+			char* base_dir_buf = new char[base_dir.size()];
+
+			lHandle = _findfirst(base_dir_buf, &tagData);
+			
+			delete[] base_dir_buf;
+
             res = 0;
             while (lHandle != -1 && res != -1)
             {
@@ -246,8 +254,8 @@ namespace Ogre {
 		// Should check ensure open succeeded, in case fail for some reason.
 		if (baseStream->fail())
 		{
-			OGRE_DELETE_T(roStream, basic_ifstream, MEMCATEGORY_GENERAL);
-			OGRE_DELETE_T(rwStream, basic_fstream, MEMCATEGORY_GENERAL);
+			OGRE_DELETE_TEMPL(roStream, basic_ifstream, MEMCATEGORY_GENERAL);
+			OGRE_DELETE_TEMPL(rwStream, basic_fstream, MEMCATEGORY_GENERAL);
 			OGRE_EXCEPT(Exception::ERR_FILE_NOT_FOUND,
 				"Cannot open file: " + filename,
 				"FileSystemArchive::open");
@@ -290,7 +298,7 @@ namespace Ogre {
 		// Should check ensure open succeeded, in case fail for some reason.
 		if (rwStream->fail())
 		{
-			OGRE_DELETE_T(rwStream, basic_fstream, MEMCATEGORY_GENERAL);
+			OGRE_DELETE_TEMPL(rwStream, basic_fstream, MEMCATEGORY_GENERAL);
 			OGRE_EXCEPT(Exception::ERR_FILE_NOT_FOUND,
 				"Cannot open file: " + filename,
 				"FileSystemArchive::create");
