@@ -376,7 +376,9 @@ namespace Ogre
 /// Allocate a block of memory for 'count' primitive types - do not use for classes that inherit from AllocatedObject
 #	define OGRE_NEW_ARRAY_T(T, count, category) ::Ogre::constructN(static_cast<T*>(::Ogre::CategorisedAllocPolicy<category>::allocateBytes(sizeof(T)*(count), __FILE__, __LINE__, __FUNCTION__)), count) 
 /// Free the memory allocated with OGRE_NEW_T. Category is required to be restated to ensure the matching policy is used
-#	define OGRE_DELETE_T(ptr, T, category) if(ptr){(ptr)->~T(); ::Ogre::CategorisedAllocPolicy<category>::deallocateBytes((void*)ptr);}
+#	define OGRE_DELETE_T(ptr, TT, category) if(ptr){(*ptr).TT::~TT(); ::Ogre::CategorisedAllocPolicy<category>::deallocateBytes((void*)ptr);}
+#	define OGRE_DELETE_TEMPL(ptr, TT, category) if(ptr){(*ptr).~TT(); ::Ogre::CategorisedAllocPolicy<category>::deallocateBytes((void*)ptr);}
+
 /// Free the memory allocated with OGRE_NEW_ARRAY_T. Category is required to be restated to ensure the matching policy is used, count and type to call destructor
 #	define OGRE_DELETE_ARRAY_T(ptr, T, count, category) if(ptr){for (size_t b = 0; b < count; ++b) { (ptr)[b].~T();} ::Ogre::CategorisedAllocPolicy<category>::deallocateBytes((void*)ptr);}
 

@@ -232,7 +232,8 @@ namespace Ogre {
 				OGRE_DELETE pRep;
 				break;
 			case SPFM_DELETE_T:
-				OGRE_DELETE_T(pRep, T, MEMCATEGORY_GENERAL);
+				//if (pRep){ (*pRep).~T(); ::Ogre::CategorisedAllocPolicy<MEMCATEGORY_GENERAL>::deallocateBytes((void*)pRep); }
+				OGRE_DELETE_TEMPL(pRep, T, MEMCATEGORY_GENERAL);
 				break;
 			case SPFM_FREE:
 				OGRE_FREE(pRep, MEMCATEGORY_GENERAL);
