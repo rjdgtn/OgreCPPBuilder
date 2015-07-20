@@ -354,7 +354,7 @@ namespace Ogre
         
     }
     //-----------------------------------------------------------------------
-    std::pair<bool, Real> Math::intersects(const Ray& ray, 
+  /*  std::pair<bool, Real> Math::intersects(const Ray& ray, 
         const vector<Plane>::type& planes, bool normalIsOutside)
     {
 		list<Plane>::type planesList;
@@ -363,12 +363,12 @@ namespace Ogre
 			planesList.push_back(*i);
 		}
 		return intersects(ray, planesList, normalIsOutside);
-    }
+    }*/
     //-----------------------------------------------------------------------
     std::pair<bool, Real> Math::intersects(const Ray& ray, 
-        const list<Plane>::type& planes, bool normalIsOutside)
+        const vector<Plane>::type& planes, bool normalIsOutside)
     {
-		list<Plane>::type::const_iterator planeit, planeitend;
+		vector<Plane>::type::const_iterator planeit, planeitend;
 		planeitend = planes.end();
 		bool allInside = true;
 		std::pair<bool, Real> ret;

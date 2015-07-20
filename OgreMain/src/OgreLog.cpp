@@ -30,6 +30,7 @@ THE SOFTWARE.
 #include "OgreLog.h"
 #include "OgreLogManager.h"
 #include "OgreString.h"
+#include "time.h"
 #if OGRE_PLATFORM == OGRE_PLATFORM_NACL
 #   include "ppapi/cpp/var.h"
 #   include "ppapi/cpp/instance.h"
