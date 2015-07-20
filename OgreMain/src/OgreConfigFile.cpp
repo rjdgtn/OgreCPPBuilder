@@ -153,7 +153,7 @@ namespace Ogre {
                         Ogre::String::size_type nonseparator_pos = line.find_first_not_of(separators, separator_pos);
                         /* ... and extract the value */
                         /* Make sure we don't crash on an empty setting (it might be a valid value) */
-                        optVal = (nonseparator_pos == Ogre::String::npos) ? "" : line.substr(nonseparator_pos);
+                        optVal = (nonseparator_pos == Ogre::String::npos) ? std::string() : line.substr(nonseparator_pos);
                         if (trimWhitespace)
                         {
                             StringUtil::trim(optVal);

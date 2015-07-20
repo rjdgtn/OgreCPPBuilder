@@ -35,6 +35,7 @@ THE SOFTWARE.
 #	define NOMINMAX // required to stop windows.h messing up std::min
 #endif
 #include "windows.h"
+#include "time.h"
 
 namespace Ogre
 {
