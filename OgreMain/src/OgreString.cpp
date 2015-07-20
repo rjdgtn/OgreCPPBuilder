@@ -29,6 +29,8 @@ THE SOFTWARE.
 #include "OgreString.h"
 #include "OgreStringVector.h"
 
+#include "ctype.h"
+
 namespace Ogre {
 
 	//-----------------------------------------------------------------------

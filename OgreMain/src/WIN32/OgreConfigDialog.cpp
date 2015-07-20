@@ -61,7 +61,7 @@ namespace Ogre
 #if OGRE_ARCHITECTURE_64 == OGRE_ARCH_TYPE
     INT_PTR ConfigDialog::DlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam)
 #else
-    BOOL ConfigDialog::DlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam)
+	BOOL CALLBACK ConfigDialog::DlgProc(HWND hDlg, UINT iMsg, WPARAM wParam, LPARAM lParam)
 #endif
     {
         HWND hwndDlgItem;

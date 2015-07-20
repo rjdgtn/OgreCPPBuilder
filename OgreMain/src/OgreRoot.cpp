@@ -1151,7 +1151,7 @@ namespace Ogre {
 			fs->open(filename.c_str(), std::ios::out | std::ios::binary);
 			if (!*fs)
 			{
-				OGRE_DELETE_T(fs, basic_fstream, MEMCATEGORY_GENERAL);
+				OGRE_DELETE_TEMPL(fs, basic_fstream, MEMCATEGORY_GENERAL);
 				OGRE_EXCEPT(Exception::ERR_CANNOT_WRITE_TO_FILE, 
 				"Can't open " + filename + " for writing", __FUNCTION__);
 			}
@@ -1180,7 +1180,7 @@ namespace Ogre {
 			ifs->open(filename.c_str(), std::ios::in | std::ios::binary);
 			if(!*ifs)
 			{
-				OGRE_DELETE_T(ifs, basic_ifstream, MEMCATEGORY_GENERAL);
+				OGRE_DELETE_TEMPL(ifs, basic_ifstream, MEMCATEGORY_GENERAL);
 				OGRE_EXCEPT(
 					Exception::ERR_FILE_NOT_FOUND, "'" + filename + "' file not found!", __FUNCTION__);
 			}

@@ -65,7 +65,7 @@ namespace Ogre {
 #if OGRE_COMPILER != OGRE_COMPILER_GCCE && OGRE_PLATFORM != OGRE_PLATFORM_ANDROID
 		LogManager::getSingleton().stream(LML_TRIVIAL)
 			<< "Creating viewport on target '" << target->getName() << "'"
-			<< ", rendering from camera '" << (cam != 0 ? cam->getName() : "NULL") << "'"
+			<< ", rendering from camera '" << (cam != 0 ? cam->getName() : std::string("NULL")) << "'"
 			<< ", relative dimensions "	<< std::ios::fixed << std::setprecision(2) 
 			<< "L: " << left << " T: " << top << " W: " << width << " H: " << height
 			<< " ZOrder: " << ZOrder;
@@ -132,7 +132,7 @@ namespace Ogre {
 
 #if OGRE_COMPILER != OGRE_COMPILER_GCCE
 		LogManager::getSingleton().stream(LML_TRIVIAL)
-			<< "Viewport for camera '" << (mCamera != 0 ? mCamera->getName() : "NULL") << "'"
+			<< "Viewport for camera '" << (mCamera != 0 ? mCamera->getName() : std::string("NULL")) << "'"
 			<< ", actual dimensions "	<< std::ios::fixed << std::setprecision(2) 
 			<< "L: " << mActLeft << " T: " << mActTop << " W: " << mActWidth << " H: " << mActHeight;
 #endif

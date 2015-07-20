@@ -42,7 +42,7 @@ THE SOFTWARE.
 #include "OgreNode.h"
 #include "OgreRay.h"
 #include "OgreSphere.h"
-
+#include <cstdint>
 namespace Ogre
 {
 	//---------------------------------------------------------------------
