@@ -588,7 +588,7 @@ namespace Ogre {
 		UnregisterClass(dummyText, hinst);
 	}
 
-	LRESULT Win32GLSupport::dummyWndProc(HWND hwnd, UINT umsg, WPARAM wp, LPARAM lp)
+	LRESULT CALLBACK Win32GLSupport::dummyWndProc(HWND hwnd, UINT umsg, WPARAM wp, LPARAM lp)
 	{
 		return DefWindowProc(hwnd, umsg, wp, lp);
 	}
