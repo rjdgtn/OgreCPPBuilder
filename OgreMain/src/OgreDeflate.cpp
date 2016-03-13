@@ -29,7 +29,7 @@
 #include "OgreDeflate.h"
 #include "OgreException.h"
 
-#include <zlib.h>
+#include <zlib/zlib.h>
 
 namespace Ogre
 {

@@ -40,7 +40,7 @@ namespace Ogre{
 	{
 	}
 
-	bool ParticleScriptCompilerListener::processNode(ScriptNodeList::iterator &iter, ScriptNodeList::iterator &end, Ogre::ParticleScriptCompiler *)
+	bool ParticleScriptCompilerListener::processNode(Ogre::ScriptNodeList::iterator &iter, ScriptNodeList::iterator &end, Ogre::ParticleScriptCompiler *)
 	{
 		return false;
 	}
@@ -68,7 +68,7 @@ namespace Ogre{
 		return mSystem;
 	}
 
-	bool ParticleScriptCompiler::compileImpl(ScriptNodeListPtr nodes)
+	bool ParticleScriptCompiler::compileImpl(Ogre::ScriptNodeListPtr nodes)
 	{
 		ScriptNodeList::iterator i = nodes->begin();
 		while(i != nodes->end())

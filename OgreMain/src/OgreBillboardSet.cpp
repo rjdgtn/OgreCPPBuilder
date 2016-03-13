@@ -43,6 +43,8 @@ THE SOFTWARE.
 #include "OgreLogManager.h"
 #include <algorithm>
 
+Ogre::String Ogre::BillboardSetFactory::FACTORY_TYPE_NAME = "BillboardSet";
+
 namespace Ogre {
     // Init statics
     RadixSort<BillboardSet::ActiveBillboardList, Billboard*, float> BillboardSet::mRadixSorter;
@@ -1502,7 +1504,7 @@ namespace Ogre {
 
 	//-----------------------------------------------------------------------
 	//-----------------------------------------------------------------------
-	String BillboardSetFactory::FACTORY_TYPE_NAME = "BillboardSet";
+
 	//-----------------------------------------------------------------------
 	const String& BillboardSetFactory::getType(void) const
 	{

@@ -72,7 +72,7 @@ namespace Ogre {
 		const GLhandleARB getGLHandle() const { return mGLHandle; }
 		void attachToProgramObject( const GLhandleARB programObject );
 		void detachFromProgramObject( const GLhandleARB programObject );
-		String getAttachedShaderNames() const { return mAttachedShaderNames; }
+		String getAttachedShaderNames() const;// { return mAttachedShaderNames; }
 
 		/// Overridden
 		bool getPassTransformStates(void) const;
@@ -82,9 +82,9 @@ namespace Ogre {
         void attachChildShader(const String& name);
 
 		/** Sets the preprocessor defines use to compile the program. */
-		void setPreprocessorDefines(const String& defines) { mPreprocessorDefines = defines; }
+		void setPreprocessorDefines(const String& defines);
 		/** Sets the preprocessor defines use to compile the program. */
-		const String& getPreprocessorDefines(void) const { return mPreprocessorDefines; }
+		const String& getPreprocessorDefines(void) const;
 
         /// Overridden from GpuProgram
         const String& getLanguage(void) const;

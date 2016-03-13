@@ -61,7 +61,7 @@ namespace Ogre {
 // End SJS additions
     /** Template class for creating single-instance global classes.
     */
-    template <typename T> class Singleton
+    template <typename T> class _OgreExport Singleton
     {
 	private:
 		/** \brief Explicit private copy constructor. This is a forbidden operation.*/

@@ -190,6 +190,8 @@ namespace Ogre {
 				pRep = 0;
 				pUseCount = 0;
 			}
+
+            return;
         }
 
     protected:

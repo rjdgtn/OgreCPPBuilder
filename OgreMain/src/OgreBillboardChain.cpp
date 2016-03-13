@@ -43,6 +43,8 @@ THE SOFTWARE.
 
 #include <limits>
 
+Ogre::String Ogre::BillboardChainFactory::FACTORY_TYPE_NAME = "BillboardChain";
+
 namespace Ogre {
 	const size_t BillboardChain::SEGMENT_EMPTY = std::numeric_limits<size_t>::max();
 	//-----------------------------------------------------------------------
@@ -787,7 +789,7 @@ namespace Ogre {
 	}
 	//-----------------------------------------------------------------------
 	//-----------------------------------------------------------------------
-	String BillboardChainFactory::FACTORY_TYPE_NAME = "BillboardChain";
+
 	//-----------------------------------------------------------------------
 	const String& BillboardChainFactory::getType(void) const
 	{

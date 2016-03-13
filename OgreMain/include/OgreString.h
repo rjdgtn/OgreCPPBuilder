@@ -205,7 +205,7 @@ namespace Ogre {
 #elif OGRE_COMPILER == OGRE_COMPILER_MSVC && OGRE_COMP_VER >= 1600 && !defined(STLPORT) // VC++ 10.0
 	typedef ::std::tr1::hash< _StringBase > _StringHash;
 #elif !defined( _STLP_HASH_FUN_H )
-	typedef stdext::hash_compare< _StringBase, std::less< _StringBase > > _StringHash;
+	typedef std::hash_compare< _StringBase, std::less< _StringBase > > _StringHash;
 #else
 	typedef std::hash< _StringBase > _StringHash;
 #endif 

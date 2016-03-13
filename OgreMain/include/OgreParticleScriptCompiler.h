@@ -48,7 +48,7 @@ namespace Ogre{
 	public:
 		ParticleScriptCompilerListener();
 		/// Override this to do custom processing of the script nodes
-		virtual bool processNode(ScriptNodeList::iterator &iter, ScriptNodeList::iterator &end, ParticleScriptCompiler*);
+		virtual bool processNode(Ogre::ScriptNodeList::iterator &iter, Ogre::ScriptNodeList::iterator &end, ParticleScriptCompiler*);
 		/// This provides the compiler with the particle system it wishes to compile into. Override it for custom system allocations.
 		virtual ParticleSystem *getParticleSystem(const String &name, const String &group);
 	};
@@ -64,11 +64,11 @@ namespace Ogre{
 		ParticleSystem *getParticleSystem() const;
 	protected:
 		/// This begins the compilation of the particle system from the final transformed AST
-		bool compileImpl(ScriptNodeListPtr nodes);
+		bool compileImpl(Ogre::ScriptNodeListPtr nodes);
 		/// Delegates to the listener if it can, otherwise returns false. If it returns true, then some input was consumed.
-		bool processNode(ScriptNodeList::iterator &i, ScriptNodeList::iterator &end);
+		bool processNode(Ogre::ScriptNodeList::iterator &i, Ogre::ScriptNodeList::iterator &end);
 		/// This is the override for loading imports
-		ScriptNodeListPtr loadImportPath(const String &name);
+		Ogre::ScriptNodeListPtr loadImportPath(const String &name);
 		/// Allows a listener to override the word id map before parsing
 		void preParse();
 		/// Allows a listener to override error handling in the compiler
@@ -77,7 +77,7 @@ namespace Ogre{
 		void compileParticleSystem(const ScriptNodePtr &node);
 		void compileEmitter(const ScriptNodePtr &node);
 		void compileAffector(const ScriptNodePtr &node);
-		String getParameterValue(ScriptNodeList::iterator &i, ScriptNodeList::iterator &end);
+		String getParameterValue(Ogre::ScriptNodeList::iterator &i, Ogre::ScriptNodeList::iterator &end);
 	private: // Listener and context data
 		ParticleScriptCompilerListener *mListener;
 

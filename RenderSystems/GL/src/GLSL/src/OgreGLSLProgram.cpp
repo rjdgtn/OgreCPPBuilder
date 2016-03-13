@@ -351,6 +351,22 @@ namespace Ogre {
 	{
 		return static_cast<const GLSLProgram*>(target)->getPreprocessorDefines();
 	}
+
+    const String& GLSLProgram::getPreprocessorDefines(void) const 
+    {
+        return mPreprocessorDefines; 
+    }
+
+    void GLSLProgram::setPreprocessorDefines(const String& defines)
+    {
+        mPreprocessorDefines = defines; 
+    }
+    
+    String GLSLProgram::getAttachedShaderNames() const 
+    {
+        return mAttachedShaderNames; 
+    }
+        
 	void GLSLProgram::CmdPreprocessorDefines::doSet(void *target, const String& val)
 	{
 		static_cast<GLSLProgram*>(target)->setPreprocessorDefines(val);

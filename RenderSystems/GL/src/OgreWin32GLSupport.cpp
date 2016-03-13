@@ -232,7 +232,7 @@ namespace Ogre {
 	String Win32GLSupport::validateConfig()
 	{
 		// TODO, DX9
-		return StringUtil::BLANK;
+		return "";//StringUtil::BLANK;
 	}
 
 	RenderWindow* Win32GLSupport::createWindow(bool autoCreateWindow, GLRenderSystem* renderSystem, const String& windowTitle)

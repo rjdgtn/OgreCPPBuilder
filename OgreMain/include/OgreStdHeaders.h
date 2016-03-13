@@ -71,7 +71,7 @@
 #ifdef __BORLANDC__
 namespace Ogre
 {
-    using namespace std;
+    //using namespace std;
 }
 #endif
 
