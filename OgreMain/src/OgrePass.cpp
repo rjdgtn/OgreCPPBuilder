@@ -784,7 +784,7 @@ namespace Ogre {
 		dest = SBF_ZERO;
 	}
     //-----------------------------------------------------------------------
-    void Pass::setSceneBlending(SceneBlendType sbt)
+    void Pass::setSceneBlending(const SceneBlendType sbt)
     {
 		// Convert type into blend factors
 

@@ -1027,9 +1027,9 @@ namespace Ogre {
         eff.arg1 = speed;
         addEffect(eff);
     }
-    //-----------------------------------------------------------------------
-    void TextureUnitState::setTransformAnimation(TextureTransformType ttype,
-        WaveformType waveType, Real base, Real frequency, Real phase, Real amplitude)
+	//-----------------------------------------------------------------------
+	void TextureUnitState::setTransformAnimation(const TextureTransformType ttype,
+		const WaveformType waveType, Real base, Real frequency, Real phase, Real amplitude)
     {
         // Remove existing effect
 		// note, only remove for subtype, not entire ET_TRANSFORM
