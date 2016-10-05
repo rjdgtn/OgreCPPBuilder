@@ -736,7 +736,7 @@ namespace Ogre {
 	{
 		if (mHWnd && !mIsFullScreen)
 		{
-			RECT rc = { 0, 0, width, height };
+			RECT rc = { 0, 0, (long)width, (long)height };
 			AdjustWindowRect(&rc, getWindowStyle(mIsFullScreen), false);
 			width = rc.right - rc.left;
 			height = rc.bottom - rc.top;

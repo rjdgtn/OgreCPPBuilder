@@ -212,7 +212,7 @@ namespace Ogre {
         @see
             Material::setSceneBlending
     */
-    enum SceneBlendType
+    enum SceneBlendType : int
     {
         /// Make the object transparent based on the final alpha values in the texture
         SBT_TRANSPARENT_ALPHA,

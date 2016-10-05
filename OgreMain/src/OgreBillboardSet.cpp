@@ -1400,7 +1400,7 @@ namespace Ogre {
 		return BillboardSetFactory::FACTORY_TYPE_NAME;
     }
     //-----------------------------------------------------------------------
-    Real BillboardSet::getSquaredViewDepth(const Camera* const cam) const
+    Real BillboardSet::getSquaredViewDepth(const Camera* cam) const
     {
         assert(mParentNode);
         return mParentNode->getSquaredViewDepth(cam);
